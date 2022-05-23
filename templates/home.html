@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Java Halu Coffee</title>
     <link rel="icon" href="//www.javahalucoffee.id/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="../static/css/stylesheet.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -13,51 +14,58 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-<div style="background-image: url('https://www.javahalucoffee.id/img/bg-slider.png'); background-repeat: no-repeat; background-size: cover;">
-    <div class="bg-success">
-        <div style="padding: 10px;">
-            <img style="max-width: 250px;" class="mx-auto d-block" src="https://www.javahalucoffee.id/img/logo.png">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+            <img src="https://www.javahalucoffee.id/img/logo.png" style="max-width: 150px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a style="font-size: medium;" class="nav-link" href="/">Beranda</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a style="font-size: medium;" class="nav-link dropdown-toggle" href="#" role="button"
+                       data-bs-toggle="dropdown">Tentang Kami</a>
+                    <ul class="dropdown-menu">
+                        <li><a style="font-size: medium;" class="dropdown-item" href="/about/profile/">Profile
+                            Processor</a></li>
+                        <li><a style="font-size: medium;" class="dropdown-item" href="/about/">Tentang Kami</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a style="font-size: medium;" class="nav-link dropdown-toggle" href="#" role="button"
+                       data-bs-toggle="dropdown">Produk Kami</a>
+                    <ul class="dropdown-menu">
+                        <li><a style="font-size: medium;" class="dropdown-item" href="#">Coffee Trip</a>
+                        </li>
+                        <li><a style="font-size: medium;" class="dropdown-item" href="/products/">Produk Kopi</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a style="font-size: medium;" class="nav-link" href="#">Hubungi Kami</a>
+                </li>
+                <li class="nav-item">
+                    <a style="font-size: medium;" class="nav-link" href="#">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <select style="font-size: medium;" class="text-dark">
+                            <option style="font-size: medium;" class="text-dark">English</option>
+                            <option style="font-size: medium;" class="text-dark" selected>Bahasa Indonesia</option>
+                            <option style="font-size: medium;" class="text-dark">العربية</option>
+                        </select>
+                    </a>
+                </li>
+            </ul>
         </div>
     </div>
-    <ul class="nav nav-tabs bg-danger">
-        <li class="nav-item">
-            <a class="nav-link text-light" style="font-size: medium;" href="#">BERANDA</a>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-light" style="font-size: medium;" data-bs-toggle="dropdown"
-               href="/about">TENTANG
-                KAMI</a>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#" style="font-size: medium;">Profile Processor</a></li>
-                <li><a class="dropdown-item" href="#" style="font-size: medium;">Tentang Kami</a></li>
-            </ul>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-light" style="font-size: medium;" data-bs-toggle="dropdown"
-               href="#">PRODUK
-                KAMI</a>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" style="font-size: medium;" href="#">Coffee Trip</a></li>
-                <li><a class="dropdown-item" style="font-size: medium;" href="#">Produk Kopi</a></li>
-            </ul>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-light" style="font-size: medium;" href="#">HUBUNGI KAMI</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-light" style="font-size: medium;" href="#">BLOG</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link">
-                <select style="font-size: medium;" class="text-dark">
-                    <option class="text-dark" style="font-size: medium;">English</option>
-                    <option class="text-dark" style="font-size: medium;" selected>Bahasa Indonesia</option>
-                    <option class="text-dark" style="font-size: medium;">العربية</option>
-                </select>
-            </a>
-        </li>
-    </ul>
-    <br><br>
+</nav>
+<div style="background-image: url('https://www.javahalucoffee.id/img/bg-slider.png'); background-repeat: no-repeat; background-size: cover;">
     <div class="container">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
@@ -69,11 +77,11 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
                 <div class="item active">
-                    <img src="https://www.javahalucoffee.id/img/slider1.jpg" style="width:100%;">
+                    <img src="{{ url_for('static', filename='/image/slider1.jpg') }}" style="width:100%;">
                 </div>
 
                 <div class="item">
-                    <img src="https://www.javahalucoffee.id/img/slider2.jpg" style="width:100%;">
+                    <img src="{{ url_for('static', filename='/image/slider2.jpg') }}" style="width:100%;">
                 </div>
             </div>
 
@@ -90,5 +98,31 @@
     </div>
     <br><br>
 </div>
+<br><br>
+<div class="container">
+    <div style="width: 45%;" class="float-left">
+        <h1><b>Tentang Java Halu</b></h1>
+        <p style="font-size: medium;">
+            JAVA HALU COFFEE INDONESIA Java Halu Coffee adalah Prosesor pasaca panen Kopi yang memproses hasil panen
+            kopi
+            dengan standar Kopi Specialty, menggunakan tekhnologi hemat air dan energi, Diproses secara Profesional oleh
+            Q
+            prosesor kami, Ibu Rani Mayasari untuk mewujudkan cita rasa yang unik dan berkarakter.
+        </p>
+        <br>
+        <a href="/about/" style="text-underline: none;">
+            <button class="w3-button w3-red w3-medium">Selenkapnya</button>
+        </a>
+    </div>
+    <div style="width: 45%;" class="float-right">
+        <img style="width: 100%;" src="{{ url_for('static', filename='/image/aboutus.jpg') }}">
+    </div>
+</div>
+<br><br>
+<div class="container">
+    <img style="width: 33.3333333333%;" class="img-fluid float-left" src="{{ url_for('static', filename='/image/banner-feature.webp') }}">
+    <div style="width: 33.3333333333%"></div>
+</div>
+<br>
 </body>
 </html>
