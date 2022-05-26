@@ -1,7 +1,0 @@
-| File Name | Status| last edited |
-=====================================
-home.html | done | 23/5/2022 19:20
-about.html | done | 5/5/2022 06:09
-profile_processor.html | ... | 5/5/2022 16:20
-produk_kopi | done | 7/5/2022 09:58
-
